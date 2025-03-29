@@ -3,7 +3,6 @@
 import jax.numpy as jnp
 import scipy.fft as osp_fft
 from jax import lax
-from jax._src.numpy.util import implements
 from jax._src.util import canonicalize_axis
 
 
@@ -34,7 +33,6 @@ def _dct_interleave_inverse(x, axis):
 
 
 # REFACTOR I'm sure there is a much cleaner way of doing this
-@implements(osp_fft.idct)
 def idct(x, norm=None, axis=-1):
     axis = canonicalize_axis(axis, x.ndim)
     N = x.shape[axis]
