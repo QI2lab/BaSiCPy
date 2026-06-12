@@ -1682,6 +1682,9 @@ class BaSiC(BaseModel):
         with open(path / _SETTINGS_FNAME) as fp:
             model = json.load(fp)
 
+        if model.get("smoothness_flatfield") == 0:
+            model["smoothness_flatfield"] = 0.01
+
         profiles = np.load(
             path / _PROFILES_FNAME,
             allow_pickle=True,

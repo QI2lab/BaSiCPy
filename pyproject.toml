@@ -1,6 +1,89 @@
 [build-system]
 requires = [
-    "setuptools>=42",
+    "setuptools>=77",
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "BaSiCPy"
+dynamic = ["version"]
+description = "A python package for background and shading correction of optical microscopy images"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Yu Liu", email = "liuyu9671@gmail.com" },
+    { name = "Nicholas Schaub", email = "nick.schaub@nih.gov" },
+    { name = "Tim Morello", email = "timothy.morello@downstate.edu" },
+    { name = "Tingying Peng", email = "tingying.peng@helmholtz-muenchen.de" },
+    { name = "Yohsuke T. Fukai", email = "ysk@yfukai.net" },
+]
+keywords = [
+    "background",
+    "shading",
+    "flatfield",
+    "darkfield",
+    "biology",
+    "optical",
+    "microscopy",
+    "image",
+    "illumination",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "hyperactive>=4.4.0,<5",
+    "torch>=2.2",
+    "torch-dct>=0.1.6",
+    "numpy>=2",
+    "pooch>=1.8",
+    "pydantic>=2.7,<3",
+    "scikit-image>=0.23",
+    "scipy>=1.13",
+    "dask>=2024.1",
+    "tqdm>=4.60",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/peng-lab/BaSiCPy/issues"
+
+[project.scripts]
+basicpy = "basicpy.__main__:cli"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "bump2version",
+    "darglint",
+    "flake8",
+    "flake8-alphabetize",
+    "flake8-black",
+    "flake8-docstrings",
+    "flake8-isort",
+    "flake8-markdown",
+    "flake8-pytest",
+    "isort",
+    "mypy",
+    "nox",
+    "pre-commit",
+    "pytest",
+    "pytest-benchmark",
+    "pytest-cov",
+    "pytest-datadir",
+    "xdoctest",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.dynamic]
+version = { file = "VERSION" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

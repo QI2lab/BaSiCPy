@@ -21,7 +21,7 @@ def synthesized_test_data(request):
     dim = request.param
 
     n_images = 8
-    basic = BaSiC(get_darkfield=False)
+    basic = BaSiC(get_darkfield=False, sort_intensity=True)
 
     """Generate a parabolic gradient to simulate uneven illumination"""
     # Create a gradient
@@ -103,7 +103,7 @@ def test_basic_fit_synthetic(synthesized_test_data):
 @pytest.mark.parametrize("use_dask", [False, True])
 def test_basic_transform(synthesized_test_data, use_dask):
 
-    basic = BaSiC(get_darkfield=False)
+    basic = BaSiC(get_darkfield=False, sort_intensity=True)
     gradient, images, truth = synthesized_test_data
 
     """Apply the shading model to the images"""

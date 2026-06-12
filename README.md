@@ -23,9 +23,7 @@ Reference:
 
 ## Backend note
 
-Starting from version **2.0**, BaSiCPy uses a **PyTorch backend** as the primary implementation.
-
-The earlier **JAX-based implementation** is still available through older releases of the package.
+Starting from version **2.0**, BaSiCPy uses a **PyTorch backend** as the implementation.
 
 ## Simple examples
 
@@ -68,6 +66,7 @@ To use BaSiCPy with GPU acceleration:
 - 💡 **Install BaSiCPy** (PyTorch backend only):
   ```bash
   pip install basicpy
+  ```
 
 ## Development
 

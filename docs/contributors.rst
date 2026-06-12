@@ -13,7 +13,7 @@ Current developers
     - Providing tests
 - Tim Morello (@tdmorello)
     - Designing and implementing the core structure of the package
-    - Implementing type-III discrete cosine transform in JAX
+    - Implementing transform routines used by the fitting backend
     - Providing documentation of the package
     - Providing tests
     - Code review
@@ -22,7 +22,7 @@ Current developers
     - Organizing meetings and presentations
     - General comments and financial support
     - Reviewing theoretical calculation
-    - Providing a JAX implementation for the approximate fitting routine
+    - Providing an implementation for the approximate fitting routine
     - Finding suitable test data, communicating with experimentalists, and commenting on expected output
 - Yohsuke T. Fukai (@yfukai)
     - The theoretical calculation for the optimization problem

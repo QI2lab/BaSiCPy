@@ -1,4 +1,4 @@
-pydantic>=2.0.0
+pydantic>=2.7,<3
 autodoc_pydantic>=2.1
 enum-tools[sphinx]
 nbsphinx==0.9.2
